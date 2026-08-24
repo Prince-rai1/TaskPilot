@@ -1,5 +1,5 @@
 import { Search, Bell, HelpCircle } from 'lucide-react';
-import './Dashboard.css';
+import '../DashboardPageComponents/Dashboard.css';
 
 function Topbar() {
   return (

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   Briefcase,
@@ -8,7 +9,7 @@ import {
   Settings,
   LogOut
 } from 'lucide-react';
-import './Dashboard.css';
+import '../DashboardPageComponents/Dashboard.css';
 
 function Sidebar() {
   return (
@@ -21,14 +22,14 @@ function Sidebar() {
       </div>
 
       <ul className="tf-nav-list">
-        <a href="#" className="tf-nav-item active">
+        <NavLink to="/dashboard" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
-        </a>
-        <a href="#" className="tf-nav-item">
+        </NavLink>
+        <NavLink to="/projects" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <Briefcase size={20} />
           <span>Projects</span>
-        </a>
+        </NavLink>
         <a href="#" className="tf-nav-item">
           <CheckSquare size={20} />
           <span>My Tasks</span>

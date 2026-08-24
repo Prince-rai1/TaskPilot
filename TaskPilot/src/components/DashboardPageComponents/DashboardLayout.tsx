@@ -1,5 +1,5 @@
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
+import Sidebar from '../SharedComponents/Sidebar';
+import Topbar from '../SharedComponents/Topbar';
 import WelcomeSection from './WelcomeSection';
 import StatCard from './StatCard';
 import MyTasks from './MyTasks';
