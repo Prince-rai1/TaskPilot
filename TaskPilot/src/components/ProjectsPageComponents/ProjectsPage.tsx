@@ -7,7 +7,7 @@ import ProjectSummary from './ProjectSummary';
 import ProjectGrid from './ProjectGrid';
 import ProjectList from './ProjectList';
 import EmptyProjectsState from './EmptyProjectsState';
-import CreateProjectModal from './CreateProjectModal';
+import CreateProjectModal from '../CreateProjectWizard/CreateProjectModal';
 import type { ProjectData } from './ProjectCard';
 
 import './Projects.css';
@@ -138,7 +138,7 @@ export default function ProjectsPage() {
         </div>
       </main>
 
-      {isModalOpen && <CreateProjectModal onClose={() => setIsModalOpen(false)} />}
+      <CreateProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
