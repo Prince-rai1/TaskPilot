@@ -1,0 +1,636 @@
+.tf-project-workspace {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.tf-project-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tf-project-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project Header */
+.tf-project-header {
+  padding: 24px 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.tf-breadcrumb {
+  font-size: 14px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tf-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.tf-breadcrumb a:hover {
+  color: #4f46e5;
+}
+
+.tf-breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.tf-project-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tf-project-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tf-project-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.tf-project-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tf-project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-project-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-project-key {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.tf-project-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #10b981;
+  background-color: #d1fae5;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tf-project-description {
+  font-size: 14px;
+  color: #475569;
+}
+
+.tf-project-actions-area {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.tf-team-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.tf-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  margin-left: -8px;
+}
+
+.tf-avatar:first-child {
+  margin-left: 0;
+}
+
+.tf-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tf-avatar-more {
+  background-color: #f8fafc;
+  color: #64748b;
+}
+
+.tf-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-btn-primary {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.tf-btn-primary:hover {
+  background-color: #4338ca;
+}
+
+.tf-btn-icon {
+  background-color: transparent;
+  color: #64748b;
+  border: 1px solid transparent;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.tf-btn-icon:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Project Navigation */
+.tf-project-nav {
+  display: flex;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  min-height: 44px;
+  padding: 0 32px;
+  overflow-x: auto;
+}
+
+.tf-project-nav-item {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.tf-project-nav-item:hover {
+  color: #0f172a;
+}
+
+.tf-project-nav-item.active {
+  color: #4f46e5;
+  border-bottom-color: #4f46e5;
+}
+
+/* Project Overview Grid */
+.tf-project-overview {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tf-overview-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.tf-summary-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tf-summary-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tf-summary-icon-wrapper.progress {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.tf-summary-icon-wrapper.issues {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+.tf-summary-icon-wrapper.completed {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+.tf-summary-icon-wrapper.team {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.tf-summary-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-summary-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.tf-summary-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-overview-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .tf-overview-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tf-overview-summary-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tf-overview-summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tf-project-header-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.tf-overview-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Base Card Styles */
+.tf-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tf-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tf-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-card-action {
+  font-size: 14px;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tf-card-action:hover {
+  text-decoration: underline;
+}
+
+/* Progress Components */
+.tf-progress-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tf-progress-percent {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tf-progress-label {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.tf-progress-bar-container {
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.tf-progress-bar-fill {
+  height: 100%;
+  background-color: #4f46e5;
+  border-radius: 4px;
+}
+
+.tf-progress-stats {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.tf-progress-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-progress-stat-value {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-progress-stat-label {
+  color: #64748b;
+}
+
+/* List Components (Deadlines, Activity) */
+.tf-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tf-list-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tf-deadline-content {
+  flex: 1;
+}
+
+.tf-deadline-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.tf-deadline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.tf-priority-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tf-priority-high {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.tf-priority-medium {
+  background-color: #fef3c7;
+  color: #f59e0b;
+}
+
+.tf-priority-low {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+/* Activity Timeline */
+.tf-activity-item {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.tf-activity-item:last-child {
+  padding-bottom: 0;
+}
+
+.tf-activity-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background-color: #e2e8f0;
+}
+
+.tf-activity-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 6px;
+}
+
+.tf-activity-text {
+  font-size: 14px;
+  color: #334155;
+}
+
+.tf-activity-text span {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-activity-time {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Team List */
+.tf-team-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-team-member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-team-member-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.tf-team-member-role {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Context & Goals */
+.tf-context-section {
+  margin-bottom: 24px;
+}
+
+.tf-context-section:last-child {
+  margin-bottom: 0;
+}
+
+.tf-context-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.tf-context-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.tf-goal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.tf-goal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.tf-goal-icon.completed {
+  color: #10b981;
+}
+
+.tf-goal-icon.pending {
+  color: #cbd5e1;
+}
+
+.tf-goal-icon.in-progress {
+  color: #4f46e5;
+}
+
+.tf-goal-text {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.tf-goal-text.completed {
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+/* Status Indicator */
+.tf-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tf-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.tf-status-dot.on-track {
+  background-color: #10b981;
+}
+
+.tf-status-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.tf-status-desc {
+  font-size: 14px;
+  color: #475569;
+}

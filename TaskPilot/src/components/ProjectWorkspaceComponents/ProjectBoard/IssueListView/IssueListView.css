@@ -1,0 +1,246 @@
+/* ===== List View Container ===== */
+.tf-issue-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 32px 32px 32px;
+  position: relative;
+  background-color: #f8fafc;
+}
+
+/* ===== Bulk Action Bar ===== */
+.tf-bulk-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  margin-bottom: 16px;
+}
+
+.tf-bulk-action-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.tf-bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Issue Table ===== */
+.tf-issue-table-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow-x: auto;
+  flex: 1;
+  min-height: 500px;
+}
+
+.tf-issue-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tf-issue-table th {
+  background-color: #f8fafc;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.tf-issue-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.tf-issue-table th.sortable:hover {
+  color: #0f172a;
+}
+
+.tf-issue-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.tf-issue-row {
+  transition: background-color 0.15s ease;
+}
+
+.tf-issue-row:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+
+.tf-issue-row.selected {
+  background-color: #eff6ff;
+}
+
+/* ===== Table Cells ===== */
+.tf-cell-checkbox {
+  width: 40px;
+  text-align: center;
+}
+
+.tf-cell-issue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.tf-cell-issue-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.tf-cell-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #e2e8f0;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.tf-cell-status-badge.in-progress {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.tf-cell-status-badge.done {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.tf-cell-assignee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.tf-cell-text-muted {
+  font-size: 13px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.tf-cell-actions {
+  width: 40px;
+  text-align: right;
+}
+
+/* ===== Group Header ===== */
+.tf-issue-group-header {
+  background-color: #f8fafc;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tf-issue-group-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Pagination ===== */
+.tf-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.tf-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Responsive Mobile List ===== */
+.tf-mobile-issue-list {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tf-mobile-issue-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.tf-mobile-issue-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.tf-mobile-issue-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+
+  .tf-col-sprint,
+  .tf-col-updated {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tf-issue-table-wrapper {
+    display: none;
+  }
+
+  .tf-mobile-issue-list {
+    display: flex;
+  }
+
+  .tf-issue-list-container {
+    padding: 0 16px 16px 16px;
+  }
+}

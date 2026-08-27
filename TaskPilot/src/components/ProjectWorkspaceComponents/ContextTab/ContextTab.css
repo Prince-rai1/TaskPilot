@@ -1,0 +1,379 @@
+/* ===== Context Tab Styles ===== */
+
+/* Container */
+.tf-context-tab {
+  padding: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header */
+.tf-context-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.tf-context-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.tf-context-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.tf-btn-secondary {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.tf-btn-secondary:hover {
+  background-color: #f8fafc;
+}
+
+/* Context Card (single white card containing all sections) */
+.tf-context-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Context Section */
+
+.tf-context-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.tf-context-section-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tf-context-empty {
+  font-size: 14px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Goal List (View Mode) */
+.tf-context-goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tf-context-goal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tf-context-goal-item:last-child {
+  border-bottom: none;
+}
+
+.tf-context-goal-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-context-goal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tf-context-goal-icon.completed {
+  color: #065f46;
+}
+
+.tf-context-goal-icon.in-progress {
+  color: #3730a3;
+}
+
+.tf-context-goal-icon.not-started {
+  color: #475569;
+}
+
+.tf-context-goal-text {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.tf-context-goal-badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.tf-context-goal-badge.completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.tf-context-goal-badge.in-progress {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.tf-context-goal-badge.not-started {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* ===== Edit Mode Styles ===== */
+
+.tf-edit-context-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tf-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.tf-form-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.6;
+  resize: vertical;
+  background: #ffffff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.tf-form-textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.tf-form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #0f172a;
+  background: #ffffff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.tf-form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+/* Edit Goal Item */
+.tf-edit-goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tf-edit-goal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.tf-edit-goal-drag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #94a3b8;
+  cursor: grab;
+}
+
+.tf-edit-goal-drag-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1;
+  color: #94a3b8;
+}
+
+.tf-edit-goal-drag-btn:hover {
+  color: #475569;
+}
+
+.tf-edit-goal-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.tf-edit-goal-select {
+  padding: 8px 32px 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  background-color: #ffffff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.tf-edit-goal-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.tf-btn-icon-danger {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.tf-btn-icon-danger:hover {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.tf-btn-text {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.tf-btn-text:hover {
+  text-decoration: underline;
+}
+
+/* Footer Actions */
+.tf-context-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ===== Responsiveness ===== */
+
+@media (max-width: 768px) {
+  .tf-context-tab {
+    padding: 16px;
+  }
+
+  .tf-context-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tf-btn-secondary {
+    align-self: flex-start;
+  }
+
+  .tf-context-card {
+    padding: 16px;
+  }
+
+  .tf-context-goal-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .tf-edit-goal-item {
+    flex-wrap: wrap;
+  }
+
+  .tf-edit-goal-input {
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  .tf-edit-goal-drag {
+    order: 1;
+  }
+
+  .tf-edit-goal-select {
+    flex: 1;
+  }
+
+  .tf-context-footer {
+    flex-direction: column-reverse;
+  }
+
+  .tf-context-footer button {
+    width: 100%;
+  }
+}

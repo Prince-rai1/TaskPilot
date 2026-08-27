@@ -1,0 +1,547 @@
+/* ===== Board Workspace Container ===== */
+.tf-board-workspace {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8fafc;
+  overflow: hidden; /* Contains the scrollable areas */
+}
+
+/* ===== Board Header ===== */
+.tf-board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 32px 16px 32px;
+  flex-shrink: 0;
+}
+
+.tf-board-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-board-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.tf-board-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.tf-board-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== Board Toolbar ===== */
+.tf-board-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tf-board-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tf-search-icon {
+  position: absolute;
+  left: 10px;
+  color: #94a3b8;
+}
+
+.tf-search-input {
+  width: 240px;
+  padding: 8px 12px 8px 36px;
+  background-color: #f1f5f9;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.tf-search-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.tf-search-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Custom Toolbar Buttons */
+.tf-toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tf-toolbar-btn:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.tf-toolbar-btn.active {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #4f46e5;
+}
+
+/* ===== Active Filters ===== */
+.tf-active-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px 0 32px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.tf-filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background-color: #e0e7ff;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3730a3;
+}
+
+.tf-filter-chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+
+.tf-filter-chip-remove:hover {
+  opacity: 1;
+}
+
+.tf-filter-clear {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.tf-filter-clear:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+/* ===== Kanban Board Area ===== */
+.tf-kanban-board {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+/* Custom Scrollbar for the Board */
+.tf-kanban-board::-webkit-scrollbar {
+  height: 10px;
+}
+.tf-kanban-board::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+  margin: 0 32px;
+}
+.tf-kanban-board::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 8px;
+}
+.tf-kanban-board::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* ===== Board Column ===== */
+.tf-board-column {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.tf-board-column.collapsed {
+  flex: 0 0 60px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tf-board-column.collapsed:hover {
+  background-color: #e2e8f0;
+}
+
+.tf-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.tf-column-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tf-column-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.tf-column-status-dot.todo { background-color: #94a3b8; }
+.tf-column-status-dot.in-progress { background-color: #3b82f6; }
+.tf-column-status-dot.done { background-color: #10b981; }
+
+.tf-column-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tf-column-count {
+  font-size: 13px;
+  color: #64748b;
+  background-color: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.tf-column-wip {
+  font-size: 12px;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+.tf-column-wip.at-limit {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Collapsed Header vertically rotated */
+.tf-column-header-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 16px;
+  height: 100%;
+}
+
+.tf-column-title-collapsed {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: rotate(180deg);
+}
+
+.tf-column-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Custom scrollbar for column body */
+.tf-column-body::-webkit-scrollbar {
+  width: 6px;
+}
+.tf-column-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tf-column-body::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 8px;
+}
+
+.tf-column-footer {
+  padding: 12px 16px;
+  flex-shrink: 0;
+}
+
+.tf-add-issue-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tf-add-issue-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ===== Issue Card ===== */
+.tf-issue-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: grab;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tf-issue-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.tf-issue-card.is-dragging {
+  opacity: 0.9;
+  transform: rotate(3deg) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  cursor: grabbing;
+  z-index: 50;
+}
+
+.tf-issue-drop-zone {
+  height: 60px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  margin: 4px 0;
+}
+
+.tf-issue-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tf-issue-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tf-issue-type-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+.tf-issue-type-icon.task { background-color: #3b82f6; color: white; }
+.tf-issue-type-icon.bug { background-color: #ef4444; color: white; }
+.tf-issue-type-icon.story { background-color: #10b981; color: white; }
+
+.tf-issue-key {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.tf-issue-priority-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tf-issue-priority-badge.highest {
+  color: #b91c1c;
+  background-color: #fef2f2;
+}
+
+.tf-issue-priority-badge.high {
+  color: #c2410c;
+  background-color: #fff7ed;
+}
+
+.tf-issue-priority-badge.medium {
+  color: #b45309;
+  background-color: #fffbeb;
+}
+
+.tf-issue-priority-badge.low {
+  color: #1d4ed8;
+  background-color: #eff6ff;
+}
+
+.tf-issue-priority-badge.lowest {
+  color: #475569;
+  background-color: #f1f5f9;
+}
+
+.tf-issue-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.tf-issue-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.tf-issue-labels {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tf-issue-label {
+  font-size: 12px;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tf-issue-bottom-left {
+  display: flex;
+  align-items: center;
+}
+
+.tf-issue-bottom-right {
+  display: flex;
+  align-items: center;
+}
+
+.tf-issue-points {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #e2e8f0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.tf-issue-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+}
+
+/* Quick Add Form */
+.tf-quick-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #4f46e5;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tf-quick-add-input {
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  resize: none;
+  outline: none;
+  padding: 0;
+  color: #0f172a;
+}
+
+.tf-quick-add-input::placeholder {
+  color: #94a3b8;
+}
+
+.tf-quick-add-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
