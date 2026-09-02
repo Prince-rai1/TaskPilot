@@ -53,16 +53,16 @@ function IssueRow({ issue, isSelected, onToggleSelect }: IssueRowProps) {
         </span>
       </td>
       <td>
-        <span className={`tf-issue-priority-badge ${issue.priority}`}>
-          {issue.priority}
+        <span className={`tf-issue-priority-text ${issue.priority}`}>
+          {issue.priority.toUpperCase()}
         </span>
       </td>
       <td>
         <div className="tf-cell-assignee">
           {issue.assigneeAvatar ? (
-             <div className="tf-issue-avatar">{issue.assigneeAvatar}</div>
+             <div className="tf-small-avatar">{issue.assigneeAvatar}</div>
           ) : (
-            <div className="tf-issue-avatar" style={{ backgroundColor: '#f1f5f9', color: '#94a3b8', border: '1px dashed #cbd5e1' }}>?</div>
+            <div className="tf-small-avatar" style={{ backgroundColor: '#f1f5f9', color: '#94a3b8', border: '1px dashed #cbd5e1' }}>?</div>
           )}
           <span>{issue.assigneeName || 'Unassigned'}</span>
         </div>

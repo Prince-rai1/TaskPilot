@@ -1,10 +1,9 @@
 .tf-issues-page {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
   width: 100%;
   background-color: #ffffff;
-  overflow: hidden;
 }
 
 /* Header */
@@ -170,7 +169,6 @@
 /* Table container */
 .tf-issues-content {
   flex: 1;
-  overflow: auto;
   position: relative;
 }
 
@@ -182,7 +180,7 @@
 
 .tf-issues-table th {
   position: sticky;
-  top: 0;
+  top: 44px; /* Below ProjectNavigation */
   background-color: #f8fafc;
   padding: 12px 16px;
   text-align: left;

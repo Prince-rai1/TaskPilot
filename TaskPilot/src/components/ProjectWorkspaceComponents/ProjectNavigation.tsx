@@ -10,11 +10,7 @@ function ProjectNavigation() {
     { label: 'Issues', path: 'issues' },
     { label: 'Backlog', path: 'backlog' },
     { label: 'Sprints', path: 'sprints' },
-    { label: 'Timeline', path: 'timeline' },
     { label: 'Calendar', path: 'calendar' },
-    { label: 'Releases', path: 'releases' },
-    { label: 'Reports', path: 'reports' },
-    { label: 'Settings', path: 'settings' }
   ];
 
   return (

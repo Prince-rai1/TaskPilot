@@ -1,0 +1,817 @@
+/* =========================================================
+   GLOBAL CALENDAR — Premium Modern Design
+   ========================================================= */
+
+/* ---------- Layout Shell ---------- */
+.tf-calendar-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.tf-calendar-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tf-calendar-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+}
+
+.tf-calendar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- Page Header ---------- */
+.tf-cal-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tf-cal-page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tf-cal-page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.tf-cal-today-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3525cd;
+  background-color: #e8e5ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.01em;
+}
+
+.tf-cal-page-header p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ---------- Toolbar ---------- */
+.tf-cal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.tf-cal-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tf-cal-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tf-cal-icon-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tf-cal-icon-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.tf-cal-pill-btn {
+  padding: 6px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tf-cal-pill-btn:hover {
+  background: #f1f5f9;
+}
+
+.tf-cal-month-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.tf-cal-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tf-cal-view-switcher {
+  display: flex;
+  padding: 3px;
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.tf-cal-view-btn {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tf-cal-view-btn.active {
+  background: #fff;
+  color: #3525cd;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+.tf-cal-view-btn:hover:not(.active) {
+  color: #334155;
+}
+
+.tf-cal-search-box {
+  position: relative;
+}
+.tf-cal-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+.tf-cal-search-box input {
+  padding: 8px 12px 8px 34px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  width: 180px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #334155;
+}
+.tf-cal-search-box input::placeholder { color: #94a3b8; }
+.tf-cal-search-box input:focus {
+  border-color: #3525cd;
+  box-shadow: 0 0 0 3px rgba(53,37,205,0.08);
+}
+
+.tf-cal-filter-group {
+  display: flex;
+  gap: 6px;
+}
+.tf-cal-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tf-cal-filter-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* ---------- Body: Calendar + Sidebar ---------- */
+.tf-calendar-body {
+  display: flex;
+  gap: 20px;
+  min-height: 560px;
+}
+
+.tf-calendar-view-area {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   MONTH VIEW
+   ========================================================= */
+.tf-month-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tf-month-header-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.tf-month-day-label {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tf-month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex: 1;
+}
+
+.tf-month-cell {
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 6px 8px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: default;
+  transition: background-color 0.15s;
+}
+.tf-month-cell:nth-child(7n) { border-right: none; }
+.tf-month-cell:hover { background: #fafbff; }
+
+.tf-month-date {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  align-self: flex-end;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
+
+.tf-month-cell.today .tf-month-date {
+  background: #3525cd;
+  color: #fff;
+}
+
+.tf-month-cell.other-month { background: #fcfcfd; }
+.tf-month-cell.other-month .tf-month-date { color: #cbd5e1; }
+
+.tf-month-more {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.tf-month-more:hover { color: #3525cd; }
+
+/* ---------- Shared Event Pill ---------- */
+.tf-event-pill {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.15s;
+  line-height: 1.4;
+}
+.tf-event-pill:hover { opacity: 0.85; }
+
+.tf-event-pill--task {
+  background: #eef2ff;
+  color: #3525cd;
+  border-left: 3px solid #3525cd;
+}
+.tf-event-pill--milestone {
+  background: #fff1f2;
+  color: #e11d48;
+  border-left: 3px solid #e11d48;
+}
+.tf-event-pill--meeting {
+  background: #ecfdf5;
+  color: #059669;
+  border-left: 3px solid #059669;
+}
+
+/* =========================================================
+   WEEK VIEW
+   ========================================================= */
+.tf-week-wrapper { height: 100%; }
+
+.tf-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+}
+
+.tf-week-col {
+  border-right: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+.tf-week-col:last-child { border-right: none; }
+
+.tf-week-col-header {
+  padding: 16px 12px;
+  text-align: center;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tf-week-col-day {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tf-week-col-date {
+  font-size: 22px;
+  font-weight: 700;
+  color: #334155;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.tf-week-col.today .tf-week-col-date {
+  background: #3525cd;
+  color: #fff;
+}
+
+.tf-week-col-body {
+  padding: 12px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* =========================================================
+   DAY VIEW
+   ========================================================= */
+.tf-day-view {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tf-day-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.tf-day-section-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+.tf-day-section-icon { flex-shrink: 0; }
+.tf-icon-task { color: #3525cd; }
+.tf-icon-meeting { color: #059669; }
+.tf-icon-milestone { color: #e11d48; }
+
+.tf-day-section-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tf-day-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tf-day-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tf-day-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.tf-day-card--task { border-left: 4px solid #3525cd; }
+.tf-day-card--meeting { border-left: 4px solid #059669; }
+.tf-day-card--milestone { border-left: 4px solid #e11d48; }
+
+.tf-day-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.tf-day-card-key {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+.tf-day-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.tf-day-card-project {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.tf-day-card-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.tf-badge-progress { background: #eef2ff; color: #3525cd; }
+.tf-badge-todo { background: #f1f5f9; color: #64748b; }
+
+.tf-day-empty {
+  padding: 24px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  border: 1px dashed #e2e8f0;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   UPCOMING PANEL (Right Sidebar)
+   ========================================================= */
+.tf-upcoming-panel {
+  width: 320px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.tf-upcoming-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.tf-upcoming-section-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.tf-upcoming-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3525cd;
+  background: #eef2ff;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tf-upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tf-upcoming-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
+.tf-upcoming-item:hover {
+  background: #f8fafc;
+}
+
+.tf-upcoming-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tf-upcoming-dot-task { background: #3525cd; }
+.tf-upcoming-dot-milestone { background: #e11d48; }
+.tf-upcoming-dot-meeting { background: #059669; }
+
+.tf-upcoming-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tf-upcoming-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tf-upcoming-item-meta {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.tf-upcoming-item-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+.tf-upcoming-item-date.today {
+  color: #3525cd;
+  background: #eef2ff;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Today's Summary */
+.tf-today-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tf-today-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+.tf-today-summary-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.tf-summary-icon-task { background: #eef2ff; color: #3525cd; }
+.tf-summary-icon-meeting { background: #ecfdf5; color: #059669; }
+.tf-summary-icon-milestone { background: #fff1f2; color: #e11d48; }
+
+.tf-today-summary-info {
+  display: flex;
+  flex-direction: column;
+}
+.tf-today-summary-count {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.tf-today-summary-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Legend */
+.tf-cal-legend {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+.tf-cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+.tf-cal-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* =========================================================
+   EVENT POPOVER
+   ========================================================= */
+.tf-popover-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.08);
+  z-index: 90;
+}
+
+.tf-popover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  width: 340px;
+  box-shadow: 0 20px 40px rgba(15,23,42,0.12), 0 4px 12px rgba(15,23,42,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tf-popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tf-popover-key {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.tf-popover-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.tf-popover-close {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tf-popover-close:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.tf-popover-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tf-popover-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+.tf-popover-label {
+  color: #94a3b8;
+  font-weight: 500;
+}
+.tf-popover-value {
+  color: #0f172a;
+  font-weight: 600;
+}
+.tf-popover-status {
+  color: #3525cd;
+}
+
+.tf-popover-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #3525cd;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.tf-popover-action:hover {
+  background: #2b1ea1;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1200px) {
+  .tf-upcoming-panel { width: 280px; }
+}
+
+@media (max-width: 1024px) {
+  .tf-upcoming-panel { display: none; }
+  .tf-cal-filter-group { display: none; }
+  .tf-cal-search-box input { width: 150px; }
+}
+
+@media (max-width: 768px) {
+  .tf-calendar-content { padding: 16px; }
+  .tf-cal-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+  .tf-cal-toolbar-left { justify-content: space-between; }
+  .tf-cal-toolbar-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tf-cal-search-box input { width: 100%; }
+  .tf-month-cell { min-height: 70px; padding: 4px; }
+  .tf-month-date { font-size: 12px; width: 22px; height: 22px; }
+  .tf-event-pill { font-size: 10px; padding: 2px 4px; }
+  .tf-day-view { padding: 16px; gap: 24px; }
+  .tf-day-card { padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .tf-popover { width: 90vw; max-width: 360px; padding: 20px; }
+}

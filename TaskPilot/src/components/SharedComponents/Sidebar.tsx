@@ -30,22 +30,22 @@ function Sidebar() {
           <Briefcase size={20} />
           <span>Projects</span>
         </NavLink>
-        <a href="#" className="tf-nav-item">
+        <NavLink to="/my-tasks" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <CheckSquare size={20} />
           <span>My Tasks</span>
-        </a>
-        <a href="#" className="tf-nav-item">
+        </NavLink>
+        <NavLink to="/calendar" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <Calendar size={20} />
           <span>Calendar</span>
-        </a>
-        <a href="#" className="tf-nav-item">
+        </NavLink>
+        <NavLink to="/members" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <Users size={20} />
           <span>Members</span>
-        </a>
-        <a href="#" className="tf-nav-item">
+        </NavLink>
+        <NavLink to="/notifications" className={({ isActive }) => `tf-nav-item ${isActive ? 'active' : ''}`}>
           <Bell size={20} />
           <span>Notifications</span>
-        </a>
+        </NavLink>
         <a href="#" className="tf-nav-item" style={{ marginTop: 'auto' }}>
           <Settings size={20} />
           <span>Settings</span>

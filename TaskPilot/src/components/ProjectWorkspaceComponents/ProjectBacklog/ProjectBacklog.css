@@ -1,0 +1,40 @@
+/* Backlog-specific styles */
+
+.tf-backlog-sprint-section {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tf-backlog-sprint-section .tf-issue-group-header {
+  padding: 12px 32px;
+  border-top: none;
+}
+
+.tf-backlog-sprint-section:first-child .tf-issue-group-header {
+  border-top: none;
+}
+
+.tf-backlog-sprint-section .tf-issues-table th {
+  padding: 10px 16px 10px 16px;
+}
+
+.tf-issue-done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.tf-btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tf-btn-icon:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}

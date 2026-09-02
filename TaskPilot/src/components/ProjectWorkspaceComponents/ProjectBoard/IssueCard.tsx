@@ -31,10 +31,10 @@ const getIssueTypeIcon = (type: string) => {
   }
 };
 
-const getPriorityBadge = (priority: string) => {
+const getPriorityText = (priority: string) => {
   return (
-    <span className={`tf-issue-priority-badge ${priority}`}>
-      {priority}
+    <span className={`tf-issue-priority-text ${priority}`}>
+      {priority.toUpperCase()}
     </span>
   );
 };
@@ -49,9 +49,6 @@ function IssueCard({ issue, isDragging }: IssueCardProps) {
           </div>
           <span className="tf-issue-key">{issue.key}</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          {getPriorityBadge(issue.priority)}
-        </div>
       </div>
 
       <h4 className="tf-issue-title">{issue.title}</h4>
@@ -64,11 +61,12 @@ function IssueCard({ issue, isDragging }: IssueCardProps) {
         </div>
       )}
 
-      {(issue.points || issue.assigneeAvatar) && (
+      {(issue.points || issue.assigneeAvatar || issue.priority) && (
         <div className="tf-issue-card-bottom">
-          <div className="tf-issue-bottom-left">
+          <div className="tf-issue-bottom-left" style={{ gap: '8px' }}>
+             {getPriorityText(issue.priority)}
              {issue.assigneeAvatar && (
-              <div className="tf-issue-avatar">
+              <div className="tf-small-avatar">
                 {issue.assigneeAvatar}
               </div>
             )}
