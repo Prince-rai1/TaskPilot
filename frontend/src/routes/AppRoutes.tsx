@@ -84,7 +84,7 @@ export const AppRoutes: React.FC = () => {
       <Route
         path="/my-tasks"
         element={
-          <ProtectedRoute allowedRoles={['EMPLOYEE', 'ADMIN']}>
+          <ProtectedRoute allowedRoles={['EMPLOYEE']}>
             <EmployeeWorkspacePage />
           </ProtectedRoute>
         }
