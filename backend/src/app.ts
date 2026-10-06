@@ -10,7 +10,7 @@ const app: Express = express();
 
 // Enable Cross-Origin Resource Sharing (CORS)
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // or your FE origin
+    origin: process.env.CLIENT_URL, // or your FE origin
     credentials: true
 }));
 
